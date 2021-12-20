@@ -1,0 +1,14 @@
+<h1>{{empsal|json}}</h1>
+
+<table border="1" align="center">
+    <tr>
+        <th>emp_id</th>
+        <th>e_name</th>
+        <th>e_sal</th>
+    </tr>
+    <tr *ngFor="let sal of empsal">
+        <td>{{sal.emp_id}}</td>
+        <td>{{sal.e_name}}</td>
+        <td>{{sal.e_sal}}</td>
+    </tr>
+</table>
