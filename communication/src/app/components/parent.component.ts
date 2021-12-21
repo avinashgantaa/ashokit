@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   public products:any[];
+  myFun(data:any):any{
+    console.log(data)
+  }
 
   constructor() {
     this.products=[

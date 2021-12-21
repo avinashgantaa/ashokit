@@ -1,0 +1,47 @@
+import{Component} from "@angular/core"
+@Component({
+    selector:'parent',
+    templateUrl:'./parent.component.html'
+})
+export default class parentcomponent{
+    public products:any[]
+    myFun(data:any):any{
+        console.log(data);
+    }
+    constructor(){
+        this.products=[{'p_id':101}]
+    }
+}
+
+
+<p>{{products}}</p>
+
+<child [p_id]="product.p_id"
+(productInfo)="myFun($event)"
+*ngFor="let product of products"></child>
+
+
+import{Component} from "@angular/core"
+@Component({
+    selector:'child',
+    templateUrl:'./child.component.html'
+})
+export default class childcomponent{
+    @Input() p_id:any;
+    @Input() p_id:any;
+    @Input() p_id:any;
+    @Output productInfo:EventEmitter<any>=new EventEmitter()
+
+    constructor(){}
+
+    clickme(){
+        this.productInfo.emit(this.p_id)
+    }
+}
+
+
+
+<h4>productID<span>{{p_id}}</span></h4>
+<button (click)=clickme()>click</button>
+
+    
