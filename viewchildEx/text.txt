@@ -1,0 +1,53 @@
+import {Component} from "@angular/core";
+@Component({
+    selector:"second",
+    templateUrl:"./second.component.html"
+})
+export default class secondComponent{
+    public varone:any;
+    public vartwo:any;
+    constructor(){
+        this.varone="hello 1";
+        this.vartwo="hello 2";
+    }
+    ngOnInit():void{}
+}
+
+<h1>{{varone}}</h1>
+<h2>{{vartwo}}</h2>
+
+
+
+import {Component} from "@angular/core";
+@Component({
+    selector:"first",
+    templateUrl:"./first.component.html"
+})
+export default class firstComponent{
+    @ViewChild(secondComponent) private second:secondComponent;
+
+    @ViewChildren(secondComponent) public map:queryList<secondComponent>=new queryList();
+
+    arr:any[]=[];
+    ngAfterViewInit(){
+        this.arr=this.map.toArray();
+    }
+    constructor(){
+        
+    }
+    ngOnInit():void{}
+    onclick(){
+        for(i:number=0;i<this.arr.length;i++){
+            this.arr[i].varone="welcome1";
+        }
+    }
+
+
+    onclick(){
+        this.second.varone="welcome1";
+        this.second.vartwo="welcome2"
+    }
+
+}
+
+<button (click)="onclick()">click</button>
