@@ -1,0 +1,30 @@
+<!--
+<div *ngFor="let sub of ['angular','react','node js','mongodb','javascript','powerbi'];
+let i=index;let f=first;let l=last;let e=even;let o=odd">
+  {{sub}}--{{i}}--{{f}}--{{l}}--{{e}}--{{o}}
+</div>
+-->
+
+<!--
+<tr>
+  <th>p_id</th>
+  <th>p_name</th>
+  <th>p_cost</th>
+  <th>p_img</th>
+</tr>
+
+<table *ngFor="let product of products">
+
+  <tr>
+    <td>{{product.p_id}}</td>
+    <td>{{product.p_name}}</td>
+    <td>{{product.p_cost}}</td>
+    <td><img src={{product.p_img}} width="50px"></td>
+  </tr>
+</table>
+
+-->
+<input type="text" [(ngModel)]="uname">{{uname}}<br>
+<input type="password" [(ngModel)]="pwd">{{pwd}}<br/>
+<input type="button" (click)="login()" value="submit">
+
