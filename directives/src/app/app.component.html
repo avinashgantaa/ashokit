@@ -1,0 +1,50 @@
+<div *ngFor="let sub of ['angular','react','node js','javascript']">
+  {{sub}}
+</div>
+
+
+
+<table>
+  <tr>
+    <th>productID</th>
+    <th>productName</th>
+    <th>productCost</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.p_id}}</td>
+    <td>{{product.p_name}}</td>
+    <td>{{product.p_cost}}</td>
+  </tr>
+
+</table>
+
+<label>userName </label>
+
+<input type="text" [(ngModel)]="username">{{username}}<br/>
+<label>password </label>
+<input type="password" [(ngModel)]="password">{{password}}<br>
+<input type="button" value="submit" (click)="login()" class="btn btn-success btn-sm my-5"><br/><br/>
+
+
+<div *ngIf="!flag;else elseblock"><h2>better luck</h2></div>
+<ng-template #elseblock><h2>welcome to group</h2></ng-template>
+<input type="button" value="status" class="btn btn-success btn-sm my-5" (click)="flag=!flag"><br/><br/>
+<!--
+<button class="btn btn-success btn-sm" (click)="count=count+1">+</button>
+<button class="btn btn-warning btn-sm">{{count}}</button>
+<button class="btn btn-success btn-sm" (click)="count=count-1">-</button>
+
+<br><br>
+-->
+
+<input type="button" value="+" class="btn btn-success btn-sm" (click)="count=count+1">
+<input type="button" value="{{count}}" class="btn btn-danger btn-sm">
+<input type="button" value="-" class="btn btn-warning btn-sm text-white" (click)="count=count-1">
+<br><br>
+
+<div [ngStyle]="{'color':count===0?'blue':'green'}">Hello</div>
+<div [ngStyle]="{'background-color':'green','color':'white','text-align':'center','width':'30%','margin':'justify'}">Welcome to team</div>
+
+<div *ngFor="let product of products">
+  <div [ngStyle]="{'color':getColor(product.p_name)}">{{product|json}}</div>
+</div>

@@ -1,0 +1,43 @@
+
+   <!--
+    <input type="button" value="toggle" class="btn btn-success" (click)="flag=!flag"> <br>
+
+    
+    <div *ngIf="flag; else elseblock">
+
+    <input type="text" [(ngModel)]="obj.uname"><br>
+    <input type="text" [(ngModel)]="obj.upwd"><br>
+    <button class="btn btn-success btn-sm my-5" (click)="onclick()">Submit</button>
+    <h3 [ngStyle]="{'color':result==='login success'?'green':'red'}">{{result}}</h3>
+
+</div>        
+
+<ng-template #elseblock>already loggedin</ng-template>
+
+<div [ngClass]="{'text-light':true,'bg-success':true}">hello</div>
+
+<div [ngClass]="{'text-success':flag}">hello world</div>
+
+<div *ngFor="let emp of [{'eid':111,'ename':'eone','esal':1000},
+                        {'eid':222,'ename':'etwo','esal':2000},
+                        {'eid':333,'ename':'ethree','esal':3000},
+                        {'eid':444,'ename':'efour','esal':4000},
+                        {'eid':555,'ename':'efive','esal':5000}]">
+                    <div [ngClass]="{'text-warning':emp.eid===111,'text-success':emp.ename==='etwo'}"
+                    [ngStyle]="{'color':emp.esal===3000?'yellow':'blue'}">{{emp|json}}</div></div>
+
+-->
+<input type="number" [(ngModel)]="num">
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="1" class="btn btn-success btn-sm">{{num}}</div>
+    <div *ngSwitchCase="2" class="btn btn-primary btn-sm">{{num}}</div>
+    <div *ngSwitchCase="3" class="btn btn-secondary btn-sm">{{num}}</div>
+    <div *ngSwitchCase="4" class="btn btn-warning btn-sm">{{num}}</div>
+    <div *ngSwitchCase="5" class="btn btn-danger btn-sm">{{num}}</div>
+    <div *ngSwitchCase="6" class="btn btn-dark btn-sm">{{num}}</div>
+    <div *ngSwitchCase="7" class="btn btn-info btn-sm">{{num}}</div>
+    <div *ngSwitchCase="8" class="btn btn-light btn-sm">{{num}}</div>
+    <div *ngSwitchDefault class="btn btn-outline-danger">{{num}}</div>
+ 
+
+</div>
